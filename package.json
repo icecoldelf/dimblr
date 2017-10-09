@@ -1,0 +1,23 @@
+{
+  "name": "dimblr",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "3.2.4"
+  },
+  "description": "Hello World Test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icecoldelf/dimblr.git"
+  },
+  "author": "Luke Dotson <lukedotson@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icecoldelf/dimblr/issues"
+  },
+  "homepage": "https://github.com/icecoldelf/dimblr#readme"
+}
