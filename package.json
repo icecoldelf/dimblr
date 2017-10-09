@@ -2,7 +2,7 @@
   "name": "dimblr",
   "version": "1.0.0",
   "dependencies": {
-    "express": "3.2.4"
+    "express": "4.16.1"
   },
   "description": "Hello World Test",
   "main": "server.js",
