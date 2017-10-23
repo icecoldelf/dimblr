@@ -23,7 +23,7 @@ COPY package.json /src/package.json
 RUN npm -g install npm@latest
 
 # Bundle app source
-#COPY . /srcp
+COPY . /src
 
 #EXPOSE  8080
 CMD ["node", "/src/server.js"]
