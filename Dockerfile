@@ -26,4 +26,4 @@ RUN npm -g install npm@latest
 COPY . /src
 
 #EXPOSE  8080
-CMD ["node", "/src/server.js"]
+CMD ["node", "src/server.js"]
