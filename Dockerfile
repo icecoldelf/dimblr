@@ -17,13 +17,13 @@ RUN apt-get install -y nodejs npm
 
 EXPOSE 80
 
-#WORKDIR /
+WORKDIR /
 # Install app dependencies
 COPY package.json /src/package.json
 RUN npm -g install npm@latest
 
 # Bundle app source
-COPY . /src
+COPY . /app
 
 #EXPOSE  8080
-CMD ["node", "src/server.js"]
+CMD ["node", "/app/src/server.js"]
