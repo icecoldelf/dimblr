@@ -1,6 +1,6 @@
-MAINTAINER Luke Dotson "lukedotson@gmail.com"
-
 FROM ubuntu:16.04
+
+MAINTAINER Luke Dotson "lukedotson@gmail.com"
 
 # Update
 #RUN apt-get update
