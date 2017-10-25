@@ -3,7 +3,7 @@ FROM alpine
 MAINTAINER Luke Dotson "lukedotson@gmail.com"
 
 # Update
-RUN apk add --update nodejs
+RUN apk add --update nodejs nodejs-npm
 
 # Not sure why this is needed yet, or if at all
 #RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
