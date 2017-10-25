@@ -21,7 +21,7 @@ EXPOSE 8080
 
 WORKDIR /
 # Install app dependencies
-COPY package.json /src/package.json
+#COPY package.json /src/package.json
 
 # Bundle app source
 COPY . /src
