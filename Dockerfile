@@ -1,11 +1,13 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 MAINTAINER Luke Dotson "lukedotson@gmail.com"
 
 # Update
 #RUN apt-get update
-RUN apt-get -qq update
-RUN apt-get install -y nodejs npm
+RUN apt-get install --yes curl
+RUN curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
+RUN apt-get install --yes nodejs
+RUN apt-get install --yes build-essential
 
 # Not sure why this is needed yet, or if at all
 #RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
@@ -15,15 +17,15 @@ RUN apt-get install -y nodejs npm
 #ADD . /data
 #RUN cd /data && npm install
 
-EXPOSE 80
+EXPOSE 8080
 
 WORKDIR /
 # Install app dependencies
 COPY package.json /src/package.json
-RUN npm -g install npm@latest
 
 # Bundle app source
-COPY . .
+COPY . /src
+RUN cd /src; npm install
 
 #EXPOSE  8080
-CMD ["npm", "start"]
+CMD ["node", "/src/server.js"]
