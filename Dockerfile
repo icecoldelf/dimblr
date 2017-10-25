@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER Luke Dotson "lukedotson@gmail.com"
 
 # Update
-#RUN apt-get update
+RUN apt-get update
 RUN apt-get install --yes curl
 RUN curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
 RUN apt-get install --yes nodejs
