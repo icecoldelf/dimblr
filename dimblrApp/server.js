@@ -5,7 +5,7 @@ var dbURL = 'mongodb://localhost:27017/luke';
 
 var response;
 
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(dbURL, function(err, db) {
   assert.equal(null, err);
   response = "Connected correctly to server.";
   db.clost();
