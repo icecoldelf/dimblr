@@ -1,7 +1,7 @@
 var express = require('express');
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-var dbURL = 'mongodb://localhost:27017/luke';
+var dbURL = 'mongodb://172.17.0.3:27017/luke';
 
 var response;
 
