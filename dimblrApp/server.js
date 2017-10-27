@@ -8,7 +8,15 @@ var response;
 var test;
 
 var findTests = function(db, callback) {
-  test = db.collection('test').find();
+  cursor = db.collection('test').find();
+  cursor.each(function(err, doc) {
+    assert.equal(err, null);
+    if (doc != null) {
+      test = doc;
+    } else {
+      callback();
+    }
+  });
 }
 
 MongoClient.connect(dbURL, function(err, db) {
