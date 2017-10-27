@@ -1,12 +1,23 @@
-var express = require('express');
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectID = require('mongodb').ObjectID;
-var dbURL = 'mongodb://172.17.0.3:27017/luke';
+var express = require('express'),
+    MongoClient = require('mongodb').MongoClient,
+    Db = require('mongodb').Db,
+    ObjectID = require('mongodb').ObjectID,
+    Server = require('mongodb').Server,
+    assert = require('assert');
+
+    //dbURL = 'mongodb://172.17.0.3:27017/luke';
 
 var response;
 var test;
 
+var db = new Db('luke', new Server('172.17.0.3', 27017));
+
+db.open(function(err, db) {
+  var cursor = db.collection('test').find();
+  response = cursor.count;
+});
+
+/*
 var findTests = function(db, callback) {
   cursor = db.collection('test').find();
   cursor.each(function(err, doc) {
@@ -25,6 +36,7 @@ MongoClient.connect(dbURL, function(err, db) {
   response = test;
   db.close();
 });
+*/
 
 // Constants
 var PORT = 8080;
