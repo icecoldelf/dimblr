@@ -8,7 +8,7 @@ var response;
 MongoClient.connect(dbURL, function(err, db) {
   assert.equal(null, err);
   response = "Connected correctly to server.";
-  db.clost();
+  db.close();
 });
 
 // Constants
