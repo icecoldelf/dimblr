@@ -14,7 +14,7 @@ var db = new Db('luke', new Server('172.17.0.3', 27017));
 
 db.open(function(err, db) {
   var cursor = db.collection('test').find();
-  response = cursor.count;
+  response = cursor.count();
 });
 
 /*
