@@ -14,7 +14,7 @@ var findTests = function(db, callback) {
 MongoClient.connect(dbURL, function(err, db) {
   assert.equal(null, err);
   test = db.collection('test').find();
-  response = JSON.stringify(test);
+  response = test;
   db.close();
 });
 
