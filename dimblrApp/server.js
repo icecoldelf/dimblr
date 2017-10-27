@@ -9,7 +9,7 @@ MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
   response = "Connected correctly to server.";
   db.clost();
-}
+});
 
 // Constants
 var PORT = 8080;
