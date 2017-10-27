@@ -4,10 +4,16 @@ var assert = require('assert');
 var dbURL = 'mongodb://172.17.0.3:27017/luke';
 
 var response;
+var test;
+
+var findTests = function(db, callback) {
+  test = db.collection('test').find();
+}
 
 MongoClient.connect(dbURL, function(err, db) {
   assert.equal(null, err);
-  response = "Connected correctly to server.";
+  test = db.collection('test').find();
+  response = test;
   db.close();
 });
 
