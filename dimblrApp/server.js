@@ -25,6 +25,7 @@ var HOST = '0.0.0.0';
 // App
 var app = express();
 app.get('/', function (req, res){
+  console.log(response);
   res.send(response);
 });
 
