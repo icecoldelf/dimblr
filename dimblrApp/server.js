@@ -59,8 +59,10 @@ var app = express();
 
 app.get('/', function (req, res){
   console.log("woohoo");
-  let response = happy();
-  res.send(response);
+  let response = happy(function () {
+    res.send(response);
+  });
+  
 });
 
 app.listen(PORT, HOST);
