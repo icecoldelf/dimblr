@@ -59,8 +59,9 @@ var app = express();
 
 app.get('/', function (req, res){
   console.log("woohoo");
-  let response = happy(function () {
-    res.send(response);
+  let response = happy(function (err, data) {
+    console.log("response: " + data);
+    res.send(data);
   });
   
 });
