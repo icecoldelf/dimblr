@@ -28,7 +28,7 @@ var happy = function() {
         }
     });
   });
-  db.close();
+  //db.close();
   return length;
 }
 
