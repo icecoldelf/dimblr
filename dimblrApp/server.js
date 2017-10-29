@@ -13,7 +13,7 @@ var test;
 var PORT = 8080;
 var HOST = '0.0.0.0';
 
-var happy = function() {
+var happy = function(callback) {
 
   var db = new Db('luke', new Server('172.17.0.3', 27017));
   var length;
@@ -29,7 +29,7 @@ var happy = function() {
     });
   });
   //db.close();
-  return length;
+  callback(length);
 }
 
 /*
@@ -59,7 +59,7 @@ var app = express();
 
 app.get('/', function (req, res){
   console.log("woohoo");
-  let response = happy(function (err, data) {
+  happy(function (err, data){
     console.log("response: " + data);
     res.send(data);
   });
