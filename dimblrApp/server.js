@@ -7,14 +7,17 @@ var express = require('express'),
 
     //dbURL = 'mongodb://172.17.0.3:27017/luke';
 
-var response;
+var response = "";
 var test;
 
 var db = new Db('luke', new Server('172.17.0.3', 27017));
 
 db.open(function(err, db) {
   db.collections(function(err, collections) {
-      response = collections.length;
+      log.console(err);
+      if(!err) {
+        response = collections.length;
+      }
   });
 });
 
