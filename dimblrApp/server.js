@@ -9,6 +9,9 @@ var express = require('express'),
 
 var response = "happy";
 var test;
+// Constants
+var PORT = 8080;
+var HOST = '0.0.0.0';
 
 var db = new Db('luke', new Server('172.17.0.3', 27017));
 
@@ -44,16 +47,14 @@ MongoClient.connect(dbURL, function(err, db) {
 });
 */
 
-// Constants
-var PORT = 8080;
-var HOST = '0.0.0.0';
-
 // App
 var app = express();
-app.get('/', function (req, res){
-  console.log(response);
-  res.send(response);
-});
 
+var happy = function(response) {
+  app.get('/', function (req, res){
+    console.log("woohoo");
+    res.send(response);
+  });
+}
 app.listen(PORT, HOST);
 console.log('Running on http://localhost:' + PORT);
