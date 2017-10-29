@@ -16,6 +16,7 @@ var HOST = '0.0.0.0';
 var happy = function() {
 
   var db = new Db('luke', new Server('172.17.0.3', 27017));
+  var length;
 
   db.open(function(err, database) {
     database.collections(function(err, collections) {
@@ -23,10 +24,12 @@ var happy = function() {
         console.log(collections.length);
         if(!err) {
           console.log(collections.length);
-          return collection.length;
+          length = collection.length;
         }
     });
   });
+  db.close();
+  return length;
 }
 
 /*
