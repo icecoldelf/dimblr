@@ -15,6 +15,7 @@ var db = new Db('luke', new Server('172.17.0.3', 27017));
 db.open(function(err, database) {
   database.collections(function(err, collections) {
       console.log(err);
+      console.log(collections.length);
       if(!err) {
         console.log(collections.length);
         //response = collections.length;
