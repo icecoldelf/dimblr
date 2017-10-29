@@ -13,18 +13,21 @@ var test;
 var PORT = 8080;
 var HOST = '0.0.0.0';
 
-var db = new Db('luke', new Server('172.17.0.3', 27017));
+var happy = function() {
 
-db.open(function(err, database) {
-  database.collections(function(err, collections) {
-      console.log(err);
-      console.log(collections.length);
-      if(!err) {
+  var db = new Db('luke', new Server('172.17.0.3', 27017));
+
+  db.open(function(err, database) {
+    database.collections(function(err, collections) {
+        console.log(err);
         console.log(collections.length);
-        //response = collections.length;
-      }
+        if(!err) {
+          console.log(collections.length);
+          return collection.length;
+        }
+    });
   });
-});
+}
 
 /*
 var findTests = function(db, callback) {
@@ -50,11 +53,12 @@ MongoClient.connect(dbURL, function(err, db) {
 // App
 var app = express();
 
-var happy = function(response) {
-  app.get('/', function (req, res){
-    console.log("woohoo");
-    res.send(response);
-  });
-}
+
+app.get('/', function (req, res){
+  console.log("woohoo");
+  let response = happy();
+  res.send(response);
+});
+
 app.listen(PORT, HOST);
 console.log('Running on http://localhost:' + PORT);
