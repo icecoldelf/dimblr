@@ -29,7 +29,7 @@ var happy = function(callback) {
     });
   });
   //db.close();
-  callback(length);
+  callback(err, length);
 }
 
 /*
