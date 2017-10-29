@@ -17,6 +17,7 @@ var happy = function(callback) {
 
   var db = new Db('luke', new Server('172.17.0.3', 27017));
   var length;
+  var err;
 
   db.open(function(err, database) {
     database.collections(function(err, collections) {
