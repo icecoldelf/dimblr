@@ -22,8 +22,8 @@ var getHome = function(callback) {
   var useDatabase = function(err, database) {
     database.collections(function(err, collections) {
       if(!err) {
-        length = collections.length;
-        callback(err, length);
+        var result = collections[0].collectionname;
+        callback(err, result);
       }
     });
   }
