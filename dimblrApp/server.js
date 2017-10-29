@@ -26,11 +26,11 @@ var happy = function(callback) {
         if(!err) {
           console.log(collections.length);
           length = collections.length;
+          callback(err, length);
         }
     });
   });
   //db.close();
-  callback(err, length);
 }
 
 /*
