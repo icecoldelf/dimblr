@@ -13,7 +13,7 @@ var test;
 var PORT = 8080;
 var HOST = '0.0.0.0';
 
-var happy = function(callback) {
+var getHome = function(callback) {
 
   var db = new Db('luke', new Server('172.17.0.3', 27017));
   var length;
@@ -59,12 +59,13 @@ var app = express();
 
 
 app.get('/', function (req, res){
-  console.log("woohoo");
-  happy(function (err, data){
-    console.log("response: " + data);
+  getHome(function (err, data){
     res.send("" + data);
   });
-  
+});
+
+app.get('/buck', function (req, res){
+  res.send("Buck is Winning!");
 });
 
 app.listen(PORT, HOST);
