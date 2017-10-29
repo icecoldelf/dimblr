@@ -62,7 +62,7 @@ app.get('/', function (req, res){
   console.log("woohoo");
   happy(function (err, data){
     console.log("response: " + data);
-    res.send(data);
+    res.send("" + data);
   });
   
 });
