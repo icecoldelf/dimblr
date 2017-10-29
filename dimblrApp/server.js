@@ -24,7 +24,7 @@ var happy = function() {
         console.log(collections.length);
         if(!err) {
           console.log(collections.length);
-          length = collection.length;
+          length = collections.length;
         }
     });
   });
