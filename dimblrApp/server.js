@@ -22,7 +22,7 @@ var getHome = function(callback) {
   var useDatabase = function(err, database) {
     database.collections(function(err, collections) {
       if(!err) {
-        var result = collections[0].collectionname;
+        var result = collections[0].collectionName;
         callback(err, result);
       }
     });
