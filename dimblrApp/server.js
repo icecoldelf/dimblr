@@ -19,17 +19,16 @@ var getHome = function(callback) {
   var length;
   var err;
 
-  db.open(function(err, database) {
+  var useDatabase = function(err, database) {
     database.collections(function(err, collections) {
-        console.log(err);
-        console.log(collections.length);
-        if(!err) {
-          console.log(collections.length);
-          length = collections.length;
-          callback(err, length);
-        }
+      if(!err) {
+        length = collections.length;
+        callback(err, length);
+      }
     });
-  });
+  }
+
+  db.open(useDatabase);
   //db.close();
 }
 
