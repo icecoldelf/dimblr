@@ -22,6 +22,11 @@ var getHome = function(callback) {
   var useDatabase = function(err, database) {
     database.collections(function(err, collections) {
       if(!err) {
+        var objectToInsert = new Object();
+        objectToInsert.name = "something";
+        objectToInsert.children = new Array();
+        objectToInsert.children.push("red","green","orange");
+        collections[0].insert(objectToInsert);
         var result = collections[0].collectionName;
         callback(err, result);
       }
