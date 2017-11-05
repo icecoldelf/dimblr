@@ -14,6 +14,7 @@ VOLUME ["/happy"]
 # Bundle app source
 COPY . /dimblrApp
 RUN cd /dimblrApp; npm install
+RUN cd /dimblrApp; npm run build
 #RUN cd /dimblrApp/node_modules/
 
 #RUN cd /dimblrApp; npm build
