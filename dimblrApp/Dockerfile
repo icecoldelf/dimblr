@@ -20,5 +20,5 @@ RUN cd /dimblrApp; npm install
 #RUN cd /dimblrApp; npm start
 
 #EXPOSE  8080
-CMD ["/dimblrApp/npm", "run build"]
-CMD ["/dimblrApp/npm", "start"]`
+CMD ["npm", "run --prefix /dimblrApp build"]
+CMD ["npm", "start --prefix /dimblrApp"]
