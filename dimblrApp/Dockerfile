@@ -16,11 +16,9 @@ COPY . /dimblrApp
 RUN cd /dimblrApp; npm install
 #RUN cd /dimblrApp/node_modules/
 
-RUN cd /dimblrApp; npm build
+#RUN cd /dimblrApp; npm build
 #RUN cd /dimblrApp; npm start
 
-RUN node /dimblrApp/src/server.js
-
 #EXPOSE  8080
-#CMD ["npm", "build"]
-#CMD ["npm", "start"]
+CMD ["npm", "/dimblrApp/build"]
+CMD ["npm", "/dimblrApp/start"]`
