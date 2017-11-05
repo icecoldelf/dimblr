@@ -8,7 +8,7 @@
     "babel-preset-react": "latest"
   },
   "description": "Hello World Test",
-  "main": "/src/server.js",
+  "main": "/dimblrApp/src/server.js",
   "scripts": {
     "build": "/dimblrApp/node_modules/.bin/babel /dimblrApp/src/jsx --presets react --out-dir /dimblrApp/src/static",
     "start": "/dimblrApp/src/server.js"
