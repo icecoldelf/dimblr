@@ -17,7 +17,7 @@ RUN cd /dimblrApp; npm install
 #RUN cd /dimblrApp/node_modules/
 
 RUN cd /dimblrApp; npm build
-RUN cd /dimblrApp; npm start
+#RUN cd /dimblrApp; npm start
 
 #EXPOSE  8080
 #CMD ["npm", "build"]
