@@ -12,8 +12,9 @@ VOLUME ["/happy"]
 # Install app dependencies
 
 # Bundle app source
-COPY . /src
-RUN cd /src; npm install
+COPY . /dimblrApp
+RUN cd /dimblrApp; npm install
+#RUN cd /dimblrApp/node_modules/
 
 #EXPOSE  8080
-CMD ["node", "/src/server.js"]
+CMD ["node", "/dimblrApp/src/server.js"]
