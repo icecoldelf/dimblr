@@ -17,4 +17,5 @@ RUN cd /dimblrApp; npm install
 #RUN cd /dimblrApp/node_modules/
 
 #EXPOSE  8080
-CMD ["node", "/dimblrApp/src/server.js"]
+CMD ["npm", "build"]
+CMD ["npm", "start"]
