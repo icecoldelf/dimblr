@@ -10,7 +10,7 @@
   "description": "Hello World Test",
   "main": "./src/server.js",
   "scripts": {
-    "build": "/dimblrApp/node_modules/.bin/babel /dimblrApp/src/jsx --presets react --out-dir /dimblrApp/src/static",
+    "compile": "/dimblrApp/node_modules/.bin/babel /dimblrApp/src/jsx --presets react --out-dir /dimblrApp/src/static",
     "start": "./src/server.js"
   },
   "repository": {

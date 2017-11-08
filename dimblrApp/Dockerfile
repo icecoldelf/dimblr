@@ -14,13 +14,7 @@ VOLUME ["/happy"]
 # Bundle app source
 COPY . /dimblrApp
 RUN cd /dimblrApp; npm install
-RUN cd /dimblrApp; npm run build
-#RUN cd /dimblrApp/node_modules/
+RUN cd /dimblrApp; npm run compile
 
-#RUN cd /dimblrApp; npm build
-#RUN cd /dimblrApp; npm start
-
-#EXPOSE  8080
-#CMD ["npm", "run --prefix /dimblrApp build"]
-#CMD ["npm", "start --prefix /dimblrApp"]
+# Start Application
 CMD ["node", "/dimblrApp/src/server.js"]
