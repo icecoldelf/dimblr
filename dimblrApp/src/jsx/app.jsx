@@ -1,5 +1,5 @@
 var contentNode = document.getElementById('contents');
-var component = <div>
+var component = <div className="happy">
                     <h1>Hello World!</h1>
                     <p>
                         happy
