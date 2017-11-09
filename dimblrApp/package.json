@@ -6,7 +6,7 @@
     "mongodb": "2.2.33",
     "babel-cli": "latest",
     "babel-preset-react": "latest",
-    "babel-preset-env": "latest"
+    "babel-preset-es2015": "latest"
   },
   "description": "Hello World Test",
   "main": "./src/server.js",
