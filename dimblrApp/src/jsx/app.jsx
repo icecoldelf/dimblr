@@ -1,9 +1,12 @@
-var contentNode = document.getElementById('contents');
-var component = <div className="happy">
+const contentNode = document.getElementById('contents');
+const continents = ['Africa','America','Asia','Australia','Europe'];
+const message = continents.map(c => 'Hello ${c}').join(' ');
+
+const component = <div className="happy">
                     <h1>Hello World!</h1>
                     <p>
-                        happy
-                        <a href="www.google.com">Google</a>
+                        {message}
                     </p>
                 </div>;
+                    
 ReactDOM.render(component, contentNode);
