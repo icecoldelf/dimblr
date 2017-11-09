@@ -11,6 +11,9 @@ class IssueFilter extends React.Component {
 class IssueTable extends React.Component {
     render() {
         const borderStyle = {border: "1px solid silver", padding: 6};
+        var issueList = new Array();
+        issueList = ["I hate everything","I love everything","there is no cake","the world is going to end"];
+        const rows = issueList.map(val => <IssueRow issue_title={val} />);
         return (
             <table style={{borderCollapse: "collapse"}}>
                 <thead>
@@ -20,8 +23,7 @@ class IssueTable extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <IssueRow issue_id={1} issue_title="Buck wants food" />
-                    <IssueRow issue_id={2} issue_title="Luke won't give Buck food" />
+                    {rows}
                 </tbody>
             </table>
         )
