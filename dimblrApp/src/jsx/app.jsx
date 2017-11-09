@@ -13,7 +13,7 @@ class IssueTable extends React.Component {
         const borderStyle = {border: "1px solid silver", padding: 6};
         var issueList = new Array();
         issueList = ["I hate everything","I love everything","there is no cake","the world is going to end"];
-        const rows = issueList.map(val => <IssueRow issue_title={val} />);
+        const rows = issueList.map((val, index) => <IssueRow issue_id={index} issue_title={val} />);
         return (
             <table style={{borderCollapse: "collapse"}}>
                 <thead>
