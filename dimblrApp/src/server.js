@@ -5,8 +5,6 @@ const express = require('express'),
       Server = require('mongodb').Server,
       assert = require('assert');
 
-
-
 var response = "happy";
 var test;
 var PORT = 8080;
@@ -29,7 +27,7 @@ var getHome = function(callback) {
 
 app.get('/', function (req, res){
   getHome(function (err, data){
-    res.send("" + data);
+    res.send("<html><head><script src='http://u.won.gg/static/app.js'><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js'></script></head><body><div id='contents'></div></body></html>" + data);
   });
 });
 
