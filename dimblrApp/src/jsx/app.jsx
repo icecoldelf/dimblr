@@ -6,4 +6,4 @@ var component = <div className="happy">
                         <a href="www.google.com">Google</a>
                     </p>
                 </div>;
-ReactDom.render(component, contentNode);
+ReactDOM.render(component, contentNode);
