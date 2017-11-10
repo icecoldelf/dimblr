@@ -36,7 +36,7 @@ class IssueTable extends React.Component {
 
 class IssueRow extends React.Component {
     render() {
-        const borderStyle = {border: "1px solid silver", padding: 4};
+        const issue = this.props.issue;
         return (
             <tr>
                 <td>{issue.id}</td>
