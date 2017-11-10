@@ -29,7 +29,7 @@ app.use("/static", express.static(__dirname + "/static"));
 
 app.get('/', function (req, res){
   getHome(function (err, data){
-    res.send("<html><head><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js'></script></head><body><div id='contents'></div><script src='http://u.won.gg/static/app.js'></script></body></html>" + data);
+    res.send("<html><head><style>table.bordered-table th, td {border: 1px solid silver; padding: 4px;}table.bordered-table {border-collapse: collapse};</style><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js'></script></head><body><div id='contents'></div><script src='http://u.won.gg/static/app.js'></script></body></html>" + data);
   });
 });
 

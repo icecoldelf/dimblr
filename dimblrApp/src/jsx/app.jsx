@@ -11,19 +11,23 @@ class IssueFilter extends React.Component {
 class IssueTable extends React.Component {
     render() {
         const borderStyle = {border: "1px solid silver", padding: 6};
-        var issueList = new Array();
-        issueList = ["I hate everything","I love everything","there is no cake","the world is going to end"];
-        const rows = issueList.map((val, index) => <IssueRow issue_id={index} issue_title={val} />);
+        const issueRows = this.props.issues.map(issue => <IssueRow key={issue.id} issue={issue} />)
+
         return (
-            <table style={{borderCollapse: "collapse"}}>
+            <table className="bordered-table">
                 <thead>
                     <tr>
-                        <th style={borderStyle}>ID</th>
-                        <th style={borderStyle}>Title</th>
+                        <th>ID</th>
+                        <th>Status</th>
+                        <th>Owner</th>
+                        <th>Created</th>
+                        <th>Effort</th>
+                        <th>Completion Date</th>
+                        <th>Title</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {rows}
+                    {issueRows}
                 </tbody>
             </table>
         )
@@ -35,8 +39,13 @@ class IssueRow extends React.Component {
         const borderStyle = {border: "1px solid silver", padding: 4};
         return (
             <tr>
-                <td style={borderStyle}>{this.props.issue_id}</td>
-                <td style={borderStyle}>{this.props.issue_title}</td>
+                <td>{issue.id}</td>
+                <td>{issue.status}</td>
+                <td>{issue.owner}</td>
+                <td>{issue.created.toDateString()}</td>
+                <td>{issue.effort}</td>
+                <td>{issue.completionDate ? issue.completionDate.toDateString() : ''}</td>
+                <td>{issue.title}</td>
             </tr>
         )
     }
@@ -52,12 +61,33 @@ class IssueAdd extends React.Component {
 
 class IssueList extends React.Component {
     render() {
+        const issues = [
+            {
+                id: 1, 
+                status: 'Open', 
+                owner: 'Buck', 
+                created: new Date('2017-11-09'), 
+                effort: 5, 
+                completeionDate: undefined, 
+                title: 'Buck is hungry'
+            },
+            {
+                id: 2, 
+                status: 'Closed', 
+                owner: 'Buck', 
+                created: new Date('2017-11-07'), 
+                effort: 6, 
+                completeionDate: undefined, 
+                title: 'Buck ate too much'
+            }
+        ];
+
         return (
             <div>
                 <h1>Issue Tracker</h1>
                 <IssueFilter />
                 <hr />
-                <IssueTable />
+                <IssueTable issues={issues} />
                 <hr />
                 <IssueAdd />
             </div>
