@@ -103,7 +103,7 @@ class IssueList extends React.Component {
                 <h1>Issue Tracker</h1>
                 <IssueFilter />
                 <hr />
-                <IssueTable issues={issues} />
+                <IssueTable issues={this.state.issues} />
                 <hr />
                 <IssueAdd />
             </div>
