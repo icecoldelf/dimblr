@@ -93,7 +93,7 @@ class IssueList extends React.Component {
         this.setState({ issues: newIssues });
     }
     createTestIssue() {
-        this.createTestIssue({
+        this.createIssue({
             status: 'New', owner: 'Pieta', created: new Date(), title: 'Completion date should be optional'
         });
     }
