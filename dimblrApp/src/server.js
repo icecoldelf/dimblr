@@ -12,7 +12,7 @@ var HOST = '0.0.0.0';
 
 var app = express();
 
-var getHome = function(callback) {
+//var getHome = function(callback) {
   //var db = new Db('luke', new Server('172.17.0.3', 27017));
   //var useDatabase = function(err, database) {
     //database.collections(function(err, collections) {
@@ -23,9 +23,9 @@ var getHome = function(callback) {
     //});
   //}
   //db.open(useDatabase);
-}
+//}
 
-app.use("/static", express.static(__dirname + "/static"));
+//app.use("/static", express.static(__dirname + "/static"));
 app.use(express.static('static'));
 
 //app.get('/', function (req, res){
