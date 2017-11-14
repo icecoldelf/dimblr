@@ -1,24 +1,24 @@
 const contentNode = document.getElementById('contents');
 
 const issues = [
-    {
-        id: 1, 
-        status: 'Open', 
-        owner: 'Buck', 
-        created: new Date('2017-11-09'), 
-        effort: 5, 
-        completeionDate: undefined, 
-        title: 'Buck is hungry'
-    },
-    {
-        id: 2, 
-        status: 'Closed', 
-        owner: 'Buck', 
-        created: new Date('2017-11-07'), 
-        effort: 6, 
-        completeionDate: undefined, 
-        title: 'Buck ate too much'
-    }
+  {
+      id: 1, 
+      status: 'Open', 
+      owner: 'Buck', 
+      created: new Date('2017-11-09'), 
+      effort: 5, 
+      completeionDate: undefined, 
+      title: 'Buck is hungry'
+  },
+  {
+      id: 2, 
+      status: 'Closed', 
+      owner: 'Buck', 
+      created: new Date('2017-11-07'), 
+      effort: 6, 
+      completeionDate: undefined, 
+      title: 'Buck ate too much'
+  }
 ];
 
 class IssueFilter extends React.Component {
