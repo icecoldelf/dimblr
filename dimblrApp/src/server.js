@@ -34,8 +34,8 @@ app.use(express.static('static'));
   //});
 //});
 
-app.get('/buck', function (req, res){
-  res.send("Buck is Winning!");
-});
+//app.get('/buck', function (req, res){
+ // res.send("Buck is Winning!");
+//});
 
 app.listen(PORT, HOST);
