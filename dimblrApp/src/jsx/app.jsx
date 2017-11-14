@@ -29,47 +29,38 @@ class IssueFilter extends React.Component {
     }
 }
 
-class IssueTable extends React.Component {
-    render() {
-        const borderStyle = {border: "1px solid silver", padding: 6};
-        const issueRows = this.props.issues.map(issue => <IssueRow key={issue.id} issue={issue} />)
+const IssueRow = (props) => (
+    <tr>
+        <td>{issue.id}</td>
+        <td>{issue.status}</td>
+        <td>{issue.owner}</td>
+        <td>{issue.created.toDateString()}</td>
+        <td>{issue.effort}</td>
+        <td>{issue.completionDate ? issue.completionDate.toDateString() : ''}</td>
+        <td>{issue.title}</td>
+    </tr>
+)
 
-        return (
-            <table className="bordered-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Status</th>
-                        <th>Owner</th>
-                        <th>Created</th>
-                        <th>Effort</th>
-                        <th>Completion Date</th>
-                        <th>Title</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {issueRows}
-                </tbody>
-            </table>
-        )
-    }
-}
-
-class IssueRow extends React.Component {
-    render() {
-        const issue = this.props.issue;
-        return (
-            <tr>
-                <td>{issue.id}</td>
-                <td>{issue.status}</td>
-                <td>{issue.owner}</td>
-                <td>{issue.created.toDateString()}</td>
-                <td>{issue.effort}</td>
-                <td>{issue.completionDate ? issue.completionDate.toDateString() : ''}</td>
-                <td>{issue.title}</td>
-            </tr>
-        )
-    }
+function IssueTable(props) {
+    const issueRows = props.issues.map(issue => <IssueRow key={issue.id} issue={issue} />);
+    return (
+        <table className="bordered-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Status</th>
+                    <th>Owner</th>
+                    <th>Created</th>
+                    <th>Effort</th>
+                    <th>Completion Date</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                {issueRows}
+            </tbody>
+        </table>
+    )
 }
 
 class IssueAdd extends React.Component {
