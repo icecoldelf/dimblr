@@ -76,7 +76,7 @@ class IssueList extends React.Component {
         super();
         this.state = { issues: [] };
         this.createIssue = this.createIssue.bind(this);
-        setInterval(1000, this.loadData());
+         setInterval(this.loadData(),1000);
     }
     componentDidMount() {
         this.loadData();
