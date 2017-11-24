@@ -3,7 +3,7 @@ FROM alpine
 MAINTAINER Luke Dotson "lukedotson@gmail.com"
 
 # Update
-RUN apk add --update nodejs nodejs-npm
+RUN apk add --update nodejs nodejs-npm mongodb
 
 EXPOSE 8080
 
