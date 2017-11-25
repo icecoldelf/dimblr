@@ -13,7 +13,8 @@ VOLUME ["/happy"]
 # Install app dependencies
 
 # Set up mongodb
-#RUN mkdir -p /data/db
+RUN mkdir -p /data/db
+RUN mongod
 
 # Bundle app source
 COPY . /dimblrApp
