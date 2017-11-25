@@ -3,13 +3,17 @@ FROM alpine
 MAINTAINER Luke Dotson "lukedotson@gmail.com"
 
 # Update
-RUN apk add --update nodejs nodejs-npm mongodb
+RUN apk add --update nodejs nodejs-npm sudo 
+RUN sudo apk add --update mongodb
 
 EXPOSE 8080
 
 WORKDIR /
 VOLUME ["/happy"]
 # Install app dependencies
+
+# Set up mongodb
+#RUN mkdir -p /data/db
 
 # Bundle app source
 COPY . /dimblrApp
